@@ -44,12 +44,11 @@ class App extends Component {
           "fulfilledby" : 1
       })
       .then((response) => {
-        console.log(response);
         axios
           .get('http://localhost:8080/api/wishes/1')
           .then(response => this.setState({wishes: response.data}));
       })
-      .catch((response) => console.log(response)); 
+      .catch((response) => console.log("Error")); 
   }
 
   render() {
@@ -89,14 +88,11 @@ class App extends Component {
           <div>Thank you with <font color="red">&hearts; </font> for fulfilling these wishes</div>
         </div>
 
-        { /* slider start */ }
         <div class="slider">
           <figure>
           {fulfilledList}
           </figure>
         </div>
-
-        { /* slider end */ }
         
         { /* 
         
