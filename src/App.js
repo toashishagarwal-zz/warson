@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import './slider.css';
 
 class App extends Component {
 
   constructor(){
     super();
-    this.state = {
+    this.state = {  
       username: '',
       wishes : [],
       wish:'',
@@ -52,7 +53,7 @@ class App extends Component {
 
   render() {
     let wishesList = this.state.wishes.map(wish => <div>{wish.description}</div>)
-    let fulfilledList = this.state.fulfilled.map(f => <div>{f.description}</div>)
+    let fulfilledList = this.state.fulfilled.map(f =><div class="slide"><p>{f.description}</p><img src="/slider_back.png" /></div>)
     return (
       <div>  
         <div class="header-container">
@@ -87,9 +88,22 @@ class App extends Component {
           <div>Thank you with <font color="red">&hearts; </font> for fulfilling these wishes</div>
         </div>
 
+        { /* slider start */ }
+        <div class="slider">
+          <figure>
+          {fulfilledList}
+          </figure>
+        </div>
+
+        { /* slider end */ }
+        
+        { /* 
+        
         <div class="wrapper-fulfilled">
           {fulfilledList}
         </div>
+        
+        */ }
 
         <div class="footer-container">
           <div>
