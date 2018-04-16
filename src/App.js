@@ -113,11 +113,15 @@ class App extends Component {
             FAQ
           </div>
           <div>
-            Proudly Made in Pune, India <br/><br/>
+            Proudly Made in India <br/><br/>
             <FontAwesome.FaPhone /> +91 XXXXXXXX <br/><br/>
             <FontAwesome.FaEnvelope /> support@happynesswall.com <br/><br/>
           </div>
-          <div>Socials</div>
+          <div>
+          <FontAwesome.FaFacebook /> &nbsp; &nbsp;
+          <FontAwesome.FaTwitter /> &nbsp; &nbsp;
+          <FontAwesome.FaLinkedin /> &nbsp; &nbsp;
+          </div>
         </div>
 
       </div>
