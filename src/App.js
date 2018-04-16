@@ -8,6 +8,7 @@ class App extends Component {
 
   constructor(){
     super();
+   
     this.state = {  
       username: '',
       wishes : [],
@@ -20,12 +21,14 @@ class App extends Component {
   }
 
   componentWillMount() {
+    var url = process.env.REACT_APP_BE_URL + '/wishes';
+   
     axios
-      .get('http://localhost:8080/api/wishes/1')
+      .get(url+'/1')
       .then(response => this.setState({wishes: response.data}));
 
     axios
-      .get('http://localhost:8080/api/wishes/2')
+      .get(url + '/2')
       .then(r => this.setState({fulfilled: r.data}));
   }
 
@@ -37,15 +40,16 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    var url = process.env.REACT_APP_BE_URL + '/wishes';
     axios
-      .post('http://localhost:8080/api/wishes/1/add', {
+      .post(url + '/1/add', {
           "description" : this.state.wish,
           "status" : 1,
           "fulfilledby" : 1
       })
       .then((response) => {
         axios
-          .get('http://localhost:8080/api/wishes/1')
+          .get(url + '/1')
           .then(response => this.setState({wishes: response.data}));
       })
       .catch((response) => console.log("Error")); 
