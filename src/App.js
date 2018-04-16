@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import './slider.css';
+import * as FontAwesome from 'react-icons/lib/fa';
 
 class App extends Component {
 
@@ -113,8 +114,8 @@ class App extends Component {
           </div>
           <div>
             Proudly Made in Pune, India <br/><br/>
-            +91 XXXXXXXX <br/><br/>
-            <i className="fas fa-envelope"></i> support@happynesswall.com <br/><br/>
+            <FontAwesome.FaPhone /> +91 XXXXXXXX <br/><br/>
+            <FontAwesome.FaEnvelope /> support@happynesswall.com <br/><br/>
           </div>
           <div>Socials</div>
         </div>
